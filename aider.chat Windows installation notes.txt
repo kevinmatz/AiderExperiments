@@ -1,0 +1,66 @@
+Attempting install on Windows, 2023-09-30:
+
+Prerequisites:
+- "pip" installed long in the past; "pip" does not work on command line though, so need to use "python -m pip"
+- Chocolately and Anaconda previously installed
+
+https://aider.chat/docs/install.html
+
+- Ran: "python -m pip install aider-chat"
+  - but "aider" does not work on command line
+  - tried "python -m pip uninstall aider-chat" and then reinstall but did not help
+- Installed "universal ctags" to work with repositories with multiple files:
+  - "choco install universal-ctags"
+  - "ctags --version" confirms it's installed
+- Created C:\Users\kevin\.aider.conf.yml (i.e., in $HOME directory) with OpenAI secret key:
+  - "openai-api-key: sk-..."
+- Anaconda previously installed via installer, but "conda" not recognized on the command line
+  - Added C:\DevTools\anaconda3\condabin to PATH, now works
+- In C:\GitRepos\AiderExperiments\Test1, executed "conda create --name aider python=3.11.3" (as per advice in https://www.youtube.com/watch?v=df8afeb1FY8)
+- "conda activate aider"
+- "python -m pip install aider-chat"
+- still doesn't work
+  - other people have reported the same issue but the issue has been closed by the maintained without a solutioon: https://github.com/paul-gauthier/aider/issues/126
+- "python -m pip list > pip-list.txt"
+  --> "aider" does not appear in the list of installed packages
+
+- https://saturncloud.io/blog/activating-conda-environment-from-powershell-a-guide-for-data-scientists/
+  - "conda init powershell"
+  - ==> For changes to take effect, close and re-open your current shell. <==
+  - restarted PowerShell
+  - now I see:
+-----
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+. : File C:\Users\kevin\OneDrive\Documents\WindowsPowerShell\profile.ps1 cannot be loaded. The file
+C:\Users\kevin\OneDrive\Documents\WindowsPowerShell\profile.ps1 is not digitally signed. You cannot run this script on
+the current system. For more information about running scripts and setting execution policy, see
+about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\kevin\OneDrive\Documents\WindowsPowerShell\profile.ps1'
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+PS C:\Users\kevin>
+-----
+
+  - "C:\GitRepos\AiderExperiments\Test1> conda create --name aiderenv"
+  - "conda activate aiderenv"
+  
+  - "python -m pip install --upgrade pip"
+  - "python --version" --> "Python 3.11.3"
+  
+- "aider" still doesn't work
+
+- Other people reporting the same problem on https://github.com/paul-gauthier/aider/issues/126 "Aider not recognized as command in Windows cmd prompt"
+  - project owner/maintainer Paul Gauthier closed this issue without resolving it
+
+--> Next step, join this Discord group to ask for help... https://discord.com/channels/1131200896827654144/1133060264825208942
+  - Created a Discord account but seconds after verifying my phone number I immediately got a "Account Disabled - Violation of TOS/Community Guidelines Notification" email and cannot log in
+    - submitted a support ticket to Discord... ugh...
+
+--> OK, next step, try all over on Linux instead...
+
