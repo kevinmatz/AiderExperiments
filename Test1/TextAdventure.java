@@ -55,6 +55,23 @@ public class TextAdventure {
         public String toString() {
             return name;
         }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null || getClass() != obj.getClass()) {
+                return false;
+            }
+            Item item = (Item) obj;
+            return Objects.equals(name, item.name);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(name);
+        }
     }
 
     static class Inventory {
