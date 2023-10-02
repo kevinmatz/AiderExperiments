@@ -1,0 +1,21 @@
+@model IEnumerable<TodoList.Models.TodoItem>
+
+<h2>Todo List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Is Complete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Task</td>
+                <td>@item.IsComplete</td>
+            </tr>
+        }
+    </tbody>
+</table>
