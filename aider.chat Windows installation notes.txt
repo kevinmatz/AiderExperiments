@@ -58,9 +58,10 @@ PS C:\Users\kevin>
 - Other people reporting the same problem on https://github.com/paul-gauthier/aider/issues/126 "Aider not recognized as command in Windows cmd prompt"
   - project owner/maintainer Paul Gauthier closed this issue without resolving it
 
---> Next step, join this Discord group to ask for help... https://discord.com/channels/1131200896827654144/1133060264825208942
-  - Created a Discord account but seconds after verifying my phone number I immediately got a "Account Disabled - Violation of TOS/Community Guidelines Notification" email and cannot log in
-    - submitted a support ticket to Discord... ugh...
+UPDATE:
 
---> OK, next step, try all over on Linux instead...
+Aha, on https://aider.chat/#usage it says:
 
+If your pip install did not place the aider executable on your path, you can invoke aider like this:
+
+python -m aider.main <file1> <file2>
