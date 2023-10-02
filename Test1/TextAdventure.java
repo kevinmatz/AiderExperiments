@@ -1,6 +1,10 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.*;
+
 
 public class TextAdventure {
 
@@ -41,6 +45,39 @@ public class TextAdventure {
         }
     }
 
+    static class Item {
+        String name;
+
+        Item(String name) {
+            this.name = name;
+        }
+
+        public String toString() {
+            return name;
+        }
+    }
+
+    static class Inventory {
+        List<Item> items = new ArrayList<>();
+        static final int MAX_ITEMS = 10;
+
+        void add(Item item) {
+            if (items.size() < MAX_ITEMS) {
+                items.add(item);
+            } else {
+                System.out.println("Your inventory is full.");
+            }
+        }
+
+        void remove(Item item) {
+            items.remove(item);
+        }
+
+        boolean isFull() {
+            return items.size() >= MAX_ITEMS;
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -52,6 +89,15 @@ public class TextAdventure {
         room2.connect("S", room1);
         room2.connect("E", room3);
         room3.connect("W", room2);
+
+        Item compass = new Item("COMPASS");
+        Item knife = new Item("KNIFE");
+        Item kitten = new Item("KITTEN");
+        Item muffin = new Item("MUFFIN");
+        room1.addItem(compass);
+        room1.addItem(knife);
+        room2.addItem(kitten);
+        room3.addItem(muffin);
 
         Inventory inventory = new Inventory();
 
@@ -101,31 +147,3 @@ public class TextAdventure {
     }
 
 }
-    static class Item {
-        String name;
-
-        Item(String name) {
-            this.name = name;
-        }
-    }
-
-    static class Inventory {
-        List<Item> items = new ArrayList<>();
-        static final int MAX_ITEMS = 10;
-
-        void add(Item item) {
-            if (items.size() < MAX_ITEMS) {
-                items.add(item);
-            } else {
-                System.out.println("Your inventory is full.");
-            }
-        }
-
-        void remove(Item item) {
-            items.remove(item);
-        }
-
-        boolean isFull() {
-            return items.size() >= MAX_ITEMS;
-        }
-    }
