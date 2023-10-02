@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Junk {
+public class TextAdventure {
 
     static class Room {
         String name;
