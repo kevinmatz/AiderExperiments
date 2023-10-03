@@ -1,0 +1,8 @@
+C:\GitRepos\AiderExperiments\Test2\obj\Debug\net6.0\Test2.csproj.AssemblyReference.cache
+C:\GitRepos\AiderExperiments\Test2\obj\Debug\net6.0\Test2.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitRepos\AiderExperiments\Test2\obj\Debug\net6.0\Test2.AssemblyInfoInputs.cache
+C:\GitRepos\AiderExperiments\Test2\obj\Debug\net6.0\Test2.AssemblyInfo.cs
+C:\GitRepos\AiderExperiments\Test2\obj\Debug\net6.0\Test2.csproj.CoreCompileInputs.cache
+C:\GitRepos\AiderExperiments\Test2\obj\Debug\net6.0\Test2.MvcApplicationPartsAssemblyInfo.cache
+C:\GitRepos\AiderExperiments\Test2\obj\Debug\net6.0\Test2.RazorAssemblyInfo.cache
+C:\GitRepos\AiderExperiments\Test2\obj\Debug\net6.0\Test2.RazorAssemblyInfo.cs
